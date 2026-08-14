@@ -5,6 +5,8 @@
 ![Status](https://img.shields.io/badge/status-v1%20shipped-green)
 ![Stack](https://img.shields.io/badge/stack-Next.js%2016%20%7C%20TypeScript%20%7C%20Canvas-blue)
 
+**Live:** <https://mcu-graph.vercel.app>
+
 The "graph of things" visual familiar from Obsidian's graph view, applied to the MCU.
 Hover any node to inspect it; scroll to zoom, drag to pan. Hovering highlights a node's
 direct neighbours and dims everything else.
