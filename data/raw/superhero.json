@@ -1,0 +1,1117 @@
+[
+  {
+    "id": 4,
+    "name": "Abomination",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 80,
+      "speed": 53,
+      "durability": 90,
+      "power": 62,
+      "combat": 95
+    },
+    "aliases": [
+      "Agent R-7",
+      "Ravager of Worlds"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Ant-Man",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 18,
+      "speed": 23,
+      "durability": 28,
+      "power": 32,
+      "combat": 32
+    },
+    "aliases": [
+      "Hank Pym",
+      "Doctor Pym",
+      "Ant-Man",
+      "Goliath",
+      "Yellowjacket",
+      "Wasp",
+      "Earth's Scientist Supreme"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Black Panther",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 16,
+      "speed": 30,
+      "durability": 60,
+      "power": 41,
+      "combat": 100
+    },
+    "aliases": [
+      "Mr. Okonkwo",
+      "The Man Without Fear",
+      "Luke Charles",
+      "Black Leopard",
+      "the Client",
+      "Coal Tiger",
+      "has impersonated Daredevil and others on occasion"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Black Widow",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 13,
+      "speed": 33,
+      "durability": 30,
+      "power": 36,
+      "combat": 100
+    },
+    "aliases": [
+      "Yelena Belova",
+      "Natasha Romanoff",
+      "Natasha",
+      "Tasha",
+      "Madame Natasha",
+      "Nancy Rushman",
+      "Laura Matthers",
+      "Nadine Roman",
+      "\"Oktober\"",
+      "Black Pearl",
+      "Ebon Flame"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Blade",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 28,
+      "speed": 38,
+      "durability": 50,
+      "power": 40,
+      "combat": 90
+    },
+    "aliases": [
+      "Switchblade",
+      "Frank Blade",
+      "Daywalker"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Captain America",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 19,
+      "speed": 38,
+      "durability": 55,
+      "power": 60,
+      "combat": 100
+    },
+    "aliases": [
+      "Nomad",
+      "The Captain"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "Captain Marvel",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 100,
+      "speed": 88,
+      "durability": 95,
+      "power": 100,
+      "combat": 75
+    },
+    "aliases": [
+      "The World's Mightiest Mortal",
+      "The Big Red Cheese",
+      "Captain Thunder",
+      "Shazam"
+    ]
+  },
+  {
+    "id": 201,
+    "name": "Daredevil",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 13,
+      "speed": 25,
+      "durability": 35,
+      "power": 61,
+      "combat": 100
+    },
+    "aliases": [
+      "Matt",
+      "Jack Batlin",
+      "Kingpin of Crime",
+      "Laurent LeVasseur",
+      "Michael \"Mike\" Murdock",
+      "Scarlet Swashbuckler",
+      "Nameless One",
+      "Kingpin of Hell's Kitchen",
+      "The Man Without Fear",
+      "The Guardian Devil",
+      "DD",
+      "Red",
+      "Hornhead",
+      "Cooper Peyton",
+      "Captain Universe"
+    ]
+  },
+  {
+    "id": 213,
+    "name": "Deadpool",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 32,
+      "speed": 50,
+      "durability": 100,
+      "power": 100,
+      "combat": 100
+    },
+    "aliases": [
+      "Wade Wilson",
+      "Jack",
+      "Chiyonosake (\"the Wolf of the Rice Wine\")",
+      "Rhodes",
+      "Corpus",
+      "Lopez",
+      "Hobgoblin",
+      "Thom Cruz",
+      "Peter Parker"
+    ]
+  },
+  {
+    "id": 225,
+    "name": "Doctor Octopus",
+    "powerstats": {
+      "intelligence": 94,
+      "strength": 48,
+      "speed": 33,
+      "durability": 40,
+      "power": 53,
+      "combat": 65
+    },
+    "aliases": [
+      "Doctor Octopus",
+      "Doc Ock",
+      "The Master Planner",
+      "The Master Programmer",
+      "Peter Benjamin Parker",
+      "Superior Spider-Man",
+      "Venom",
+      "Superior Venom"
+    ]
+  },
+  {
+    "id": 226,
+    "name": "Doctor Strange",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 10,
+      "speed": 12,
+      "durability": 84,
+      "power": 100,
+      "combat": 60
+    },
+    "aliases": [
+      "Sorcerer Supreme",
+      "Master of the Mystic Arts",
+      "Stephen Sanders",
+      "Captain Universe",
+      "Vincent Stevens"
+    ]
+  },
+  {
+    "id": 234,
+    "name": "Drax the Destroyer",
+    "powerstats": {
+      "intelligence": 56,
+      "strength": 80,
+      "speed": 25,
+      "durability": 85,
+      "power": 46,
+      "combat": 65
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 235,
+    "name": "Ego",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 80,
+      "speed": 83,
+      "durability": 99,
+      "power": 71,
+      "combat": 28
+    },
+    "aliases": [
+      "The Living Planet"
+    ]
+  },
+  {
+    "id": 237,
+    "name": "Electro",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 10,
+      "speed": 50,
+      "durability": 56,
+      "power": 67,
+      "combat": 64
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 251,
+    "name": "Falcon",
+    "powerstats": {
+      "intelligence": 38,
+      "strength": 13,
+      "speed": 50,
+      "durability": 28,
+      "power": 22,
+      "combat": 64
+    },
+    "aliases": [
+      "Sam Wilson",
+      "(formerly) Captain America",
+      "Blackbird",
+      "Blackwing",
+      "Brother Superhero"
+    ]
+  },
+  {
+    "id": 275,
+    "name": "Gamora",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 85,
+      "speed": 42,
+      "durability": 85,
+      "power": 53,
+      "combat": 100
+    },
+    "aliases": [
+      "The Deadliest Woman In The Universe",
+      "The Most Dangerous Woman in the Galaxy"
+    ]
+  },
+  {
+    "id": 299,
+    "name": "Green Goblin",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 48,
+      "speed": 38,
+      "durability": 60,
+      "power": 48,
+      "combat": 50
+    },
+    "aliases": [
+      "Normie",
+      "Green Goblin",
+      "Goblin Lord",
+      "Overlord",
+      "the Goblin",
+      "\"Gobby\"",
+      "Scrier",
+      "Commander Osborn",
+      "Director Osborn",
+      "Iron Patriot"
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Groot",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 85,
+      "speed": 33,
+      "durability": 70,
+      "power": 100,
+      "combat": 64
+    },
+    "aliases": [
+      "The Monster from Planet X; His Divine Majesty King Groot the 23rd",
+      "Monarch of Planet X",
+      "custodian of the branch worlds",
+      "ruler of all the shades",
+      "Flora colossus Information-silk"
+    ]
+  },
+  {
+    "id": 313,
+    "name": "Hawkeye",
+    "powerstats": {
+      "intelligence": 56,
+      "strength": 12,
+      "speed": 21,
+      "durability": 10,
+      "power": 29,
+      "combat": 80
+    },
+    "aliases": [
+      "Ronin",
+      "Goliath",
+      "Golden Archer",
+      "the Marksman",
+      "Father Time",
+      "Longbow"
+    ]
+  },
+  {
+    "id": 321,
+    "name": "Hela",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 100,
+      "speed": 46,
+      "durability": 100,
+      "power": 100,
+      "combat": 45
+    },
+    "aliases": [
+      "Goddess of Death"
+    ]
+  },
+  {
+    "id": 332,
+    "name": "Hulk",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 100,
+      "speed": 63,
+      "durability": 100,
+      "power": 98,
+      "combat": 85
+    },
+    "aliases": [
+      "Annihilator",
+      "Captain Universe",
+      "Joe Fixit",
+      "Mr. Fixit",
+      "Mechano",
+      "Professor",
+      "Jade Jaws",
+      "Golly Green Giant"
+    ]
+  },
+  {
+    "id": 345,
+    "name": "Iron Fist",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 55,
+      "speed": 33,
+      "durability": 50,
+      "power": 95,
+      "combat": 100
+    },
+    "aliases": [
+      "Daredevil",
+      "Daniel Thomas Rand",
+      "the Living Weapon",
+      "Young Dragon",
+      "Danny Rand"
+    ]
+  },
+  {
+    "id": 346,
+    "name": "Iron Man",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 85,
+      "speed": 58,
+      "durability": 85,
+      "power": 100,
+      "combat": 64
+    },
+    "aliases": [
+      "Iron Knight",
+      "Hogan Potts",
+      "Spare Parts Man",
+      "Cobalt Man II",
+      "Crimson Dynamo",
+      "Ironman"
+    ]
+  },
+  {
+    "id": 361,
+    "name": "Jessica Jones",
+    "powerstats": {
+      "intelligence": 56,
+      "strength": 44,
+      "speed": 50,
+      "durability": 70,
+      "power": 18,
+      "combat": 55
+    },
+    "aliases": [
+      "Knightress",
+      "Madeline",
+      "Jewel",
+      "Power Woman"
+    ]
+  },
+  {
+    "id": 379,
+    "name": "Kang",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 48,
+      "speed": 58,
+      "durability": 70,
+      "power": 100,
+      "combat": 70
+    },
+    "aliases": [
+      "Blue Man",
+      "Victor Timely",
+      "Blue Totem",
+      "Scarlet Centurion",
+      "Rama-Tut",
+      "King of Kings",
+      "Master of Men",
+      "Lord of the Seven Suns"
+    ]
+  },
+  {
+    "id": 391,
+    "name": "Kingpin",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 18,
+      "speed": 25,
+      "durability": 40,
+      "power": 13,
+      "combat": 70
+    },
+    "aliases": [
+      "The Brain Washer",
+      "Harold Howard",
+      "Wilbur"
+    ]
+  },
+  {
+    "id": 392,
+    "name": "Klaw",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 38,
+      "speed": 33,
+      "durability": 100,
+      "power": 62,
+      "combat": 60
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 412,
+    "name": "Lizard",
+    "powerstats": {
+      "intelligence": 50,
+      "strength": 51,
+      "speed": 27,
+      "durability": 70,
+      "power": 63,
+      "combat": 56
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 414,
+    "name": "Loki",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 63,
+      "speed": 46,
+      "durability": 85,
+      "power": 100,
+      "combat": 60
+    },
+    "aliases": [
+      "God of Mischief",
+      "Gem-Keeper",
+      "Walter Lawson",
+      "Lester",
+      "Loren Olsen",
+      "Tyfon",
+      "Father Williams",
+      "Willie",
+      "Tso Zhung; has also impersonated hundreds of others."
+    ]
+  },
+  {
+    "id": 416,
+    "name": "Luke Cage",
+    "powerstats": {
+      "intelligence": 50,
+      "strength": 63,
+      "speed": 29,
+      "durability": 95,
+      "power": 44,
+      "combat": 70
+    },
+    "aliases": [
+      "Carl Lucas",
+      "Power Man",
+      "Mark Lucas",
+      "Hero for Hire",
+      "Ace of Spades"
+    ]
+  },
+  {
+    "id": 423,
+    "name": "Magneto",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 80,
+      "speed": 27,
+      "durability": 84,
+      "power": 91,
+      "combat": 80
+    },
+    "aliases": [
+      "The Creator",
+      "Erik Magnus Lehnsherr",
+      "Michael Xavier",
+      "White Pilgrim",
+      "Erik the RedThe Master of Magnetism"
+    ]
+  },
+  {
+    "id": 431,
+    "name": "Mantis",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 8,
+      "speed": 33,
+      "durability": 80,
+      "power": 100,
+      "combat": 80
+    },
+    "aliases": [
+      "Celestial Madonna",
+      "Willow",
+      "Lorelei",
+      "Mandy Celestine",
+      "This One (in referring to herself)"
+    ]
+  },
+  {
+    "id": 470,
+    "name": "Moon Knight",
+    "powerstats": {
+      "intelligence": 50,
+      "strength": 36,
+      "speed": 23,
+      "durability": 42,
+      "power": 28,
+      "combat": 75
+    },
+    "aliases": [
+      "Jake Lockley",
+      "Steven Grant",
+      "Yitzak Topol",
+      "Fist of Khonshu",
+      "Crescent Crusader",
+      "Lunar Legionnaire"
+    ]
+  },
+  {
+    "id": 479,
+    "name": "Mysterio",
+    "powerstats": {
+      "intelligence": 81,
+      "strength": 10,
+      "speed": 17,
+      "durability": 40,
+      "power": 82,
+      "combat": 70
+    },
+    "aliases": [
+      "Nicholas Macabes",
+      "Rudolph Hines",
+      "Gerdes",
+      "Doctor Ludwig Rinehart"
+    ]
+  },
+  {
+    "id": 481,
+    "name": "Namor",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 95,
+      "speed": 58,
+      "durability": 70,
+      "power": 73,
+      "combat": 85
+    },
+    "aliases": [
+      "Imperius Rex",
+      "Dr. G.W. Falton",
+      "Sub-Mariner",
+      "\"Subby\"",
+      "Namor the First",
+      "Avenging Son",
+      "Old Man",
+      "Rex",
+      "Joe Pierre",
+      "Lord of the Seven Seas",
+      "the Scion of the Deep",
+      "Phoenix"
+    ]
+  },
+  {
+    "id": 487,
+    "name": "Nebula",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 52,
+      "speed": 13,
+      "durability": 50,
+      "power": 42,
+      "combat": 60
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 489,
+    "name": "Nick Fury",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 11,
+      "speed": 23,
+      "durability": 42,
+      "power": 25,
+      "combat": 100
+    },
+    "aliases": [
+      "Doyle",
+      "The Mystery in the Mask",
+      "Patch",
+      "Scorpio"
+    ]
+  },
+  {
+    "id": 498,
+    "name": "Odin",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 83,
+      "speed": 67,
+      "durability": 95,
+      "power": 100,
+      "combat": 90
+    },
+    "aliases": [
+      "All-Father,Sky-Father",
+      "Atum-Re",
+      "Woden",
+      "Wotan",
+      "Oden",
+      "Orrin",
+      "Harbard",
+      "King of Asgard"
+    ]
+  },
+  {
+    "id": 527,
+    "name": "Professor X",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 8,
+      "speed": 12,
+      "durability": 14,
+      "power": 100,
+      "combat": 32
+    },
+    "aliases": [
+      "Prof",
+      "Dr. X",
+      "Professor Xavier",
+      "formerly Prisoner M-13"
+    ]
+  },
+  {
+    "id": 530,
+    "name": "Punisher",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 16,
+      "speed": 21,
+      "durability": 45,
+      "power": 42,
+      "combat": 100
+    },
+    "aliases": [
+      "Big Nothing",
+      "Major Bateman",
+      "Ted Bishop",
+      "Cliff Callador",
+      "Castigo",
+      "Chaloner",
+      "Fred D'Amato",
+      "Eastman",
+      "Charles Fort",
+      "Frank Loomis",
+      "McRook",
+      "Melchior",
+      "Joe Rainey",
+      "Frank Rook",
+      "Richard Rook",
+      "Tony Knowlen Ross",
+      "Francis Stronghold",
+      "Johnny Tower",
+      "Dmitri Velikoff",
+      "Fra"
+    ]
+  },
+  {
+    "id": 536,
+    "name": "Quicksilver",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 28,
+      "speed": 100,
+      "durability": 60,
+      "power": 81,
+      "combat": 56
+    },
+    "aliases": [
+      "Pietro Frank",
+      "Gypsy Davey",
+      "Mateo Maximoff"
+    ]
+  },
+  {
+    "id": 550,
+    "name": "Red Skull",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 10,
+      "speed": 12,
+      "durability": 14,
+      "power": 19,
+      "combat": 80
+    },
+    "aliases": [
+      "Dell Rusk",
+      "Bettman P. Lyles",
+      "the Agent of a Thousand Faces",
+      "The Man",
+      "Cyrus Fenton",
+      "Teacher",
+      "Tod March",
+      "John Smith",
+      "Aleksander Lukin."
+    ]
+  },
+  {
+    "id": 566,
+    "name": "Rocket Raccoon",
+    "powerstats": {
+      "intelligence": 50,
+      "strength": 5,
+      "speed": 23,
+      "durability": 28,
+      "power": 28,
+      "combat": 64
+    },
+    "aliases": [
+      "Sharpshooting Space Racoon",
+      "Rocky Raccoon",
+      "Ranger Rocket"
+    ]
+  },
+  {
+    "id": 572,
+    "name": "Sandman",
+    "powerstats": {
+      "intelligence": 44,
+      "strength": 75,
+      "speed": 46,
+      "durability": 90,
+      "power": 100,
+      "combat": 60
+    },
+    "aliases": [
+      "Flint Marko",
+      "Sylvester Mann",
+      "Quarryman"
+    ]
+  },
+  {
+    "id": 579,
+    "name": "Scarlet Witch",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 10,
+      "speed": 29,
+      "durability": 70,
+      "power": 100,
+      "combat": 80
+    },
+    "aliases": [
+      "Wanda Frank",
+      "Wanda Magnus",
+      "Ana Maximoff",
+      "Gypsy Witch",
+      "The Witch"
+    ]
+  },
+  {
+    "id": 587,
+    "name": "Shang-Chi",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 12,
+      "speed": 30,
+      "durability": 50,
+      "power": 29,
+      "combat": 100
+    },
+    "aliases": [
+      "The Master of Kung Fu; The Rising and Advancing of the Spirit; Chinaman (by Jack Tarr)"
+    ]
+  },
+  {
+    "id": 589,
+    "name": "She-Hulk",
+    "powerstats": {
+      "intelligence": 81,
+      "strength": 100,
+      "speed": 42,
+      "durability": 100,
+      "power": 40,
+      "combat": 70
+    },
+    "aliases": [
+      "Jade Giantess"
+    ]
+  },
+  {
+    "id": 620,
+    "name": "Spider-Man",
+    "powerstats": {
+      "intelligence": 90,
+      "strength": 55,
+      "speed": 67,
+      "durability": 75,
+      "power": 74,
+      "combat": 85
+    },
+    "aliases": [
+      "Spiderman",
+      "Bag-Man",
+      "Black Marvel",
+      "Captain Universe",
+      "Dusk",
+      "Green Hood",
+      "Hornet",
+      "Mad Dog 336",
+      "Peter Palmer",
+      "Prodigy",
+      "Ricochet",
+      "Scarlet Spider",
+      "Spider-Boy",
+      "Spider-Hulk",
+      "Spider-Morphosis"
+    ]
+  },
+  {
+    "id": 630,
+    "name": "Star-Lord",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 20,
+      "speed": 33,
+      "durability": 50,
+      "power": 25,
+      "combat": 70
+    },
+    "aliases": [
+      "Starlord"
+    ]
+  },
+  {
+    "id": 655,
+    "name": "Thanos",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 100,
+      "speed": 33,
+      "durability": 100,
+      "power": 100,
+      "combat": 80
+    },
+    "aliases": [
+      "The Mad Titan",
+      "Masterlord",
+      "The Overmaster",
+      "Chins"
+    ]
+  },
+  {
+    "id": 659,
+    "name": "Thor",
+    "powerstats": {
+      "intelligence": 69,
+      "strength": 100,
+      "speed": 83,
+      "durability": 100,
+      "power": 100,
+      "combat": 100
+    },
+    "aliases": [
+      "Donald Blake",
+      "Sigurd Jarlson",
+      "Jake Olsen",
+      "Donar the Mighty"
+    ]
+  },
+  {
+    "id": 680,
+    "name": "Ultron",
+    "powerstats": {
+      "intelligence": 88,
+      "strength": 83,
+      "speed": 42,
+      "durability": 100,
+      "power": 100,
+      "combat": 64
+    },
+    "aliases": [
+      "Crimson Cowl",
+      "Great Devil",
+      "Great Ultron",
+      "Iron Man",
+      "Mark",
+      "Omega",
+      "Ultimate Ultron",
+      "Ultron-5 (and hundreds of other sequential numerical designations)",
+      "Ultron Mark Twelve",
+      "Ho Yinsen"
+    ]
+  },
+  {
+    "id": 697,
+    "name": "Vision",
+    "powerstats": {
+      "intelligence": 100,
+      "strength": 72,
+      "speed": 54,
+      "durability": 95,
+      "power": 100,
+      "combat": 70
+    },
+    "aliases": [
+      "Victor Shade"
+    ]
+  },
+  {
+    "id": 701,
+    "name": "Vulture",
+    "powerstats": {
+      "intelligence": 75,
+      "strength": 22,
+      "speed": 42,
+      "durability": 25,
+      "power": 26,
+      "combat": 30
+    },
+    "aliases": [
+      "-"
+    ]
+  },
+  {
+    "id": 703,
+    "name": "War Machine",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 80,
+      "speed": 63,
+      "durability": 100,
+      "power": 100,
+      "combat": 85
+    },
+    "aliases": [
+      "Rhodey",
+      "Iron Man",
+      "Jim Rhodes"
+    ]
+  },
+  {
+    "id": 708,
+    "name": "Wasp",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 17,
+      "speed": 58,
+      "durability": 52,
+      "power": 29,
+      "combat": 42
+    },
+    "aliases": [
+      "Pixie"
+    ]
+  },
+  {
+    "id": 714,
+    "name": "Winter Soldier",
+    "powerstats": {
+      "intelligence": 56,
+      "strength": 32,
+      "speed": 35,
+      "durability": 65,
+      "power": 60,
+      "combat": 84
+    },
+    "aliases": [
+      "Bucky",
+      "Captain America"
+    ]
+  },
+  {
+    "id": 717,
+    "name": "Wolverine",
+    "powerstats": {
+      "intelligence": 63,
+      "strength": 32,
+      "speed": 50,
+      "durability": 100,
+      "power": 89,
+      "combat": 100
+    },
+    "aliases": [
+      "Weapon X",
+      "Weapon Ten",
+      "Death",
+      "Mutate 9601",
+      "Jim Logan",
+      "Emilio Garra",
+      "Weapon Chi",
+      "Experiment X",
+      "Agent Ten",
+      "Peter Richards",
+      "Mai kethLogan",
+      "Mr. Patch"
+    ]
+  }
+]

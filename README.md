@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🕸️ MCU Graph
 
-## Getting Started
+> An interactive force-directed graph of the Marvel Cinematic Universe — characters, films, teams and powers as one explorable web.
 
-First, run the development server:
+![Status](https://img.shields.io/badge/status-v1%20shipped-green)
+![Stack](https://img.shields.io/badge/stack-Next.js%2016%20%7C%20TypeScript%20%7C%20Canvas-blue)
+
+The "graph of things" visual familiar from Obsidian's graph view, applied to the MCU.
+Hover any node to inspect it; scroll to zoom, drag to pan. Hovering highlights a node's
+direct neighbours and dims everything else.
+
+![The MCU graph](docs/images/graph.png)
+
+Hovering *Avengers: Endgame* lights up its 33 connected characters:
+
+![Neighbour highlighting](docs/images/highlight.png)
+
+## What's in the graph
+
+**167 nodes, 661 links**, compiled from a curated seed:
+
+| Node type | Count | |
+|---|---|---|
+| 🔴 Character | 71 | Heroes, villains and supporting cast |
+| 🔵 Film / series | 41 | Phases 1–6, including Disney+ series |
+| 🟡 Team | 12 | Avengers, Guardians, Wakandans, X-Men… |
+| 🟢 Power | 43 | Flight, super strength, magic, time manipulation… |
+
+Edges: `APPEARS_IN`, `MEMBER_OF`, `HAS_POWER`, `ALLY_OF`, `ENEMY_OF`.
+Node colour encodes type; node radius encodes degree centrality.
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router, TypeScript strict, Turbopack) |
+| Rendering | [`react-force-graph-2d`](https://github.com/vasturiano/react-force-graph) on HTML canvas |
+| Styling | Tailwind CSS v4 |
+| Testing | Vitest (38 tests) |
+| Data | Curated seed JSON + the [SuperHero dataset](https://akabab.github.io/superhero-api/) |
+| Deploy | Static export (`output: 'export'`) — no server, no database |
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # compiles the graph, then serves http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other commands:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run ingest:superhero   # refresh data/raw/superhero.json (no API key needed)
+npm run build:graph        # compile data/ -> public/data/graph.json
+npm run build              # static export to out/
+npm run lint
+npm test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How the data is built
 
-## Learn More
+```
+data/characters.seed.json    curated spine, hand-maintained
+data/raw/superhero.json      committed snapshot (powerstats, aliases)
+        │
+        ▼   scripts/build-graph.ts  ->  src/lib/build-graph.ts (pure, 18 tests)
+public/data/graph.json       generated, gitignored
+        │
+        ▼   fetched by the client and rendered on canvas
+```
 
-To learn more about Next.js, take a look at the following resources:
+The curated seed is the **spine**. Every character carries explicit foreign keys
+(`superheroId`, plus `tmdbId` / `marvelId` / `wikidataQid` reserved as `null`), so
+enrichment is always a lookup by ID — never a fuzzy name match, which would silently
+mis-join characters like the two different Captain Marvels. See
+[ADR 0001](docs/adr/0001-curated-seed-spine.md).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`data/raw/` is committed deliberately: builds stay reproducible, offline and free of
+API rate limits in CI. See [ADR 0002](docs/adr/0002-static-export-no-database.md).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
 
-## Deploy on Vercel
+- Canvas content is mirrored into a focusable node list (ordered by degree), so the
+  graph is reachable by keyboard — `Tab` selects a node and shows the same tooltip.
+- `prefers-reduced-motion` freezes the simulation and renders a pre-settled layout.
+- The node list is hidden below the `sm` breakpoint so the graph gets the full mobile
+  viewport.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scope
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+v1 is **the visualization and nothing else** — the graph plus a plain-text hover
+tooltip. Deliberately no trading cards, no detail panel, no collection layer.
+See [docs/spec.md](docs/spec.md) for the full backlog: Wikidata / TMDB / Marvel API
+ingestion, filters and search, and a detail panel.
+
+## Known limitations
+
+- **Film appearances are hand-entered** in the seed, so they're the main source of
+  factual error until TMDB ingestion lands.
+- **Powerstats are comics values**, not MCU canon. In v1 they only influence node
+  sizing; any UI that surfaces them must label them "Comics power stats".
+- **~71 characters is a deliberate cap.** Wikidata knows about 1,195 MCU entities,
+  which would render as an unreadable hairball.
+
+## Legal note
+
+Marvel characters are Disney-owned IP. This is a free, non-commercial fan project that
+only *displays* publicly available data. Minting or trading these characters as NFTs
+would be copyright and trademark infringement — Disney licenses official Marvel NFTs
+exclusively through VeVe. The backlog collection layer is therefore an off-chain
+simulation behind an interface, and no Marvel asset is ever tokenised.
+
+Adding TMDB or Marvel API data will require attribution in the footer.
