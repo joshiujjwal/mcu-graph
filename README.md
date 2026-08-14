@@ -59,6 +59,18 @@ npm run lint
 npm test
 ```
 
+## Deployment
+
+Hosted on Vercel as a pure static export — no server, no database, no env vars.
+The GitHub repo is connected, so **pushes to `main` deploy automatically**.
+
+```bash
+vercel --prod   # manual deploy, if ever needed
+```
+
+`data/raw/` is committed, so the production build never calls an external API and
+cannot fail on rate limits.
+
 ## How the data is built
 
 ```
