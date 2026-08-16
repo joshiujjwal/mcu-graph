@@ -31,6 +31,26 @@ export const buildAdjacency = (graph: Graph): Adjacency => {
   return adjacency;
 };
 
+export const searchCharacters = (
+  graph: Graph,
+  query: string,
+): readonly Extract<GraphNode, { kind: "character" }>[] => {
+  const normalized = query.trim().toLocaleLowerCase();
+  if (normalized === "") return [];
+
+  return graph.nodes
+    .filter(
+      (node): node is Extract<GraphNode, { kind: "character" }> =>
+        node.kind === "character",
+    )
+    .filter((node) =>
+      [node.label, ...node.aliases].some((value) =>
+        value.toLocaleLowerCase().includes(normalized),
+      ),
+    )
+    .sort((a, b) => a.label.localeCompare(b.label));
+};
+
 export type TooltipRow = { readonly label: string; readonly value: string };
 
 export type Tooltip = {

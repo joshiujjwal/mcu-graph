@@ -8,8 +8,8 @@
 **Live:** <https://mcu-graph.vercel.app>
 
 The "graph of things" visual familiar from Obsidian's graph view, applied to the MCU.
-Hover any node to inspect it; scroll to zoom, drag to pan. Hovering highlights a node's
-direct neighbours and dims everything else.
+Search for a character or hover any node to inspect it; scroll to zoom, drag to pan.
+Selecting a character highlights it and its direct neighbours while dimming everything else.
 
 ![The MCU graph](docs/images/graph.png)
 
@@ -38,7 +38,7 @@ Node colour encodes type; node radius encodes degree centrality.
 | Framework | Next.js 16 (App Router, TypeScript strict, Turbopack) |
 | Rendering | [`react-force-graph-2d`](https://github.com/vasturiano/react-force-graph) on HTML canvas |
 | Styling | Tailwind CSS v4 |
-| Testing | Vitest (38 tests) |
+| Testing | Vitest (41 tests) |
 | Data | Curated seed JSON + the [SuperHero dataset](https://akabab.github.io/superhero-api/) |
 | Deploy | Static export (`output: 'export'`) — no server, no database |
 
@@ -96,6 +96,8 @@ API rate limits in CI. See [ADR 0002](docs/adr/0002-static-export-no-database.md
 
 - Canvas content is mirrored into a focusable node list (ordered by degree), so the
   graph is reachable by keyboard — `Tab` selects a node and shows the same tooltip.
+- The character search matches names and aliases, highlights the first matching character,
+  and offers matching results for direct selection. Press `Escape` to clear it.
 - `prefers-reduced-motion` freezes the simulation and renders a pre-settled layout.
 - The node list is hidden below the `sm` breakpoint so the graph gets the full mobile
   viewport.

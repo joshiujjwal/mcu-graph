@@ -7,7 +7,7 @@ export default function Home() {
         <h1 className="text-sm font-semibold tracking-tight">MCU Graph</h1>
         <p className="text-xs text-zinc-400">
           Characters, films, teams and powers of the Marvel Cinematic Universe.
-          Hover a node to inspect it; scroll to zoom, drag to pan.
+          Search or hover a character to highlight it; scroll to zoom, drag to pan.
         </p>
       </header>
 

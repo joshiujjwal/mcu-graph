@@ -9,6 +9,7 @@
 - [x] Graph compiler (pure, 18 tests) → 167 nodes / 661 links
 - [x] Force-directed canvas with neighbour highlighting
 - [x] Plain-text hover tooltip + keyboard-reachable node list
+- [x] Character search with match highlighting and alias support
 - [x] Perf/a11y/mobile pass, README with screenshots
 
 ## Backlog

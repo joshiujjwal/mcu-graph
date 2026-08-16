@@ -19,6 +19,7 @@ import {
   NODE_COLORS,
   buildAdjacency,
   nodeRadius,
+  searchCharacters,
   tooltipFor,
 } from "@/lib/graph-view";
 import type { Graph, GraphNode } from "@/types/graph";
@@ -97,6 +98,8 @@ export const CharacterGraph = ({ graph }: Props) => {
   const reducedMotion = usePrefersReducedMotion();
 
   const [hovered, setHovered] = useState<GraphNode | null>(null);
+  const [searched, setSearched] = useState<GraphNode | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [focusIndex, setFocusIndex] = useState<number | null>(null);
 
@@ -109,10 +112,15 @@ export const CharacterGraph = ({ graph }: Props) => {
     [graph],
   );
 
+  const searchResults = useMemo(
+    () => searchCharacters(graph, searchQuery),
+    [graph, searchQuery],
+  );
+
   // force-graph mutates node/link objects in place with simulation state, so it
   // gets its own copy rather than the frozen compiled data.
   const data = useMemo(
-    () => ({
+    (): { nodes: PositionedNode[]; links: GraphLinkObject[] } => ({
       nodes: graph.nodes.map((node) => ({ ...node })),
       links: graph.links.map((link) => ({ ...link })),
     }),
@@ -121,10 +129,11 @@ export const CharacterGraph = ({ graph }: Props) => {
 
   const isActive = useCallback(
     (id: string): boolean => {
-      if (hovered === null) return true;
-      return id === hovered.id || (adjacency.get(hovered.id)?.has(id) ?? false);
+      const selected = hovered ?? searched;
+      if (selected === null) return true;
+      return id === selected.id || (adjacency.get(selected.id)?.has(id) ?? false);
     },
-    [adjacency, hovered],
+    [adjacency, hovered, searched],
   );
 
   const paintNode = useCallback(
@@ -138,7 +147,8 @@ export const CharacterGraph = ({ graph }: Props) => {
       ctx.fillStyle = active ? NODE_COLORS[node.kind] : DIMMED;
       ctx.fill();
 
-      if (hovered?.id === node.id) {
+      const selected = hovered ?? searched;
+      if (selected?.id === node.id) {
         ctx.lineWidth = 2 / scale;
         ctx.strokeStyle = "#ffffff";
         ctx.stroke();
@@ -147,7 +157,7 @@ export const CharacterGraph = ({ graph }: Props) => {
       // Labels only once zoomed in, or for the biggest hubs, otherwise
       // overlapping text makes the canvas unreadable.
       const showLabel =
-        active && (scale > 1.8 || node.degree > 22 || hovered?.id === node.id);
+        active && (scale > 1.8 || node.degree > 22 || selected?.id === node.id);
       if (!showLabel) return;
 
       const fontSize = Math.max(10 / scale, 2.5);
@@ -157,12 +167,38 @@ export const CharacterGraph = ({ graph }: Props) => {
       ctx.fillStyle = "rgba(235,235,245,0.9)";
       ctx.fillText(node.label, x, y + radius + 1);
     },
-    [hovered, isActive],
+    [hovered, isActive, searched],
   );
 
   const handleHover = useCallback((node: PositionedNode | null) => {
     setHovered(node ?? null);
   }, []);
+
+  const selectSearchResult = useCallback(
+    (node: GraphNode | null) => {
+      setSearched(node);
+      if (node === null) return;
+
+      const positioned = data.nodes.find((candidate) => candidate.id === node.id);
+      if (
+        positioned &&
+        typeof positioned.x === "number" &&
+        typeof positioned.y === "number"
+      ) {
+        graphRef.current?.centerAt(positioned.x, positioned.y, 400);
+        graphRef.current?.zoom(2, 400);
+      }
+    },
+    [data.nodes],
+  );
+
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      setSearchQuery(value);
+      selectSearchResult(searchCharacters(graph, value)[0] ?? null);
+    },
+    [graph, selectSearchResult],
+  );
 
   // Spread the layout out; the default charge leaves a dense unreadable ball.
   useEffect(() => {
@@ -207,13 +243,17 @@ export const CharacterGraph = ({ graph }: Props) => {
           linkColor={(link) => {
             const source = typeof link.source === "object" ? link.source.id : link.source;
             const target = typeof link.target === "object" ? link.target.id : link.target;
-            if (hovered === null) return LINK_COLOR;
-            return hovered.id === source || hovered.id === target ? LINK_ACTIVE : DIMMED;
+            const selected = hovered ?? searched;
+            if (selected === null) return LINK_COLOR;
+            return selected.id === source || selected.id === target ? LINK_ACTIVE : DIMMED;
           }}
           linkWidth={(link) => {
             const source = typeof link.source === "object" ? link.source.id : link.source;
             const target = typeof link.target === "object" ? link.target.id : link.target;
-            return hovered !== null && (hovered.id === source || hovered.id === target) ? 1.5 : 0.5;
+            const selected = hovered ?? searched;
+            return selected !== null && (selected.id === source || selected.id === target)
+              ? 1.5
+              : 0.5;
           }}
           onNodeHover={handleHover}
           onEngineStop={fitToView}
@@ -223,6 +263,54 @@ export const CharacterGraph = ({ graph }: Props) => {
           enableNodeDrag={!reducedMotion}
         />
       )}
+
+      <div className="absolute left-4 top-4 z-10 w-64 max-w-[calc(100%-2rem)]">
+        <label htmlFor="character-search" className="sr-only">
+          Search characters
+        </label>
+        <input
+          id="character-search"
+          type="search"
+          value={searchQuery}
+          onChange={(event) => handleSearchChange(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setSearchQuery("");
+              selectSearchResult(null);
+            }
+            if (event.key === "Enter") {
+              selectSearchResult(searchResults[0] ?? null);
+            }
+          }}
+          placeholder="Search characters…"
+          autoComplete="off"
+          className="w-full rounded-md border border-white/10 bg-zinc-900/90 px-3 py-2 text-sm text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-white/30 focus:ring-1 focus:ring-white/30"
+        />
+        {searchQuery !== "" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mt-1 rounded-md border border-white/10 bg-zinc-900/95 p-1 text-xs backdrop-blur"
+          >
+            {searchResults.length === 0 ? (
+              <p className="px-2 py-1 text-zinc-500">No characters found</p>
+            ) : (
+              searchResults.slice(0, 6).map((node) => (
+                <button
+                  key={node.id}
+                  type="button"
+                  onClick={() => selectSearchResult(node)}
+                  className={`block w-full rounded px-2 py-1 text-left text-zinc-300 hover:bg-white/10 ${
+                    searched?.id === node.id ? "bg-white/10" : ""
+                  }`}
+                >
+                  {node.label}
+                </button>
+              ))
+            )}
+          </div>
+        )}
+      </div>
 
       <GraphLegend />
       {hovered !== null && (

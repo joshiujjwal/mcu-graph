@@ -3,6 +3,7 @@ import {
   NODE_COLORS,
   buildAdjacency,
   nodeRadius,
+  searchCharacters,
   tooltipFor,
 } from "@/lib/graph-view";
 import type { CharacterNode, Graph, GraphNode } from "@/types/graph";
@@ -100,6 +101,34 @@ describe("NODE_COLORS", () => {
     for (const kind of kinds) {
       expect(NODE_COLORS[kind]).toMatch(/^#[0-9a-f]{6}$/i);
     }
+  });
+});
+
+describe("searchCharacters", () => {
+  it("should find characters by a case-insensitive label match", () => {
+    expect(searchCharacters(graph, "thor").map((node) => node.label)).toEqual([
+      "Thor",
+    ]);
+  });
+
+  it("should find characters by alias but not non-character nodes", () => {
+    const withAlias: Graph = {
+      ...graph,
+      nodes: [
+        characterNode({ aliases: ["The Armoured Avenger"] }),
+        ...graph.nodes.slice(1),
+      ],
+    };
+
+    expect(
+      searchCharacters(withAlias, "armoured avenger").map((node) => node.label),
+    ).toEqual(["Iron Man"]);
+    expect(searchCharacters(withAlias, "avengers")).toEqual([]);
+  });
+
+  it("should return no results for an empty or unmatched query", () => {
+    expect(searchCharacters(graph, "   ")).toEqual([]);
+    expect(searchCharacters(graph, "does not exist")).toEqual([]);
   });
 });
 

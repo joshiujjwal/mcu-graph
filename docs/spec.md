@@ -16,7 +16,7 @@ Deliberately narrow. Ship the visualization, then decide what deserves more.
 | Visualization | 2D force-directed canvas | 3D toggle |
 | Info display | Hover tooltip, plain text | Click-through detail panel, designed cards |
 | Data sources | Curated seed + SuperHero dataset | Wikidata, TMDB, Marvel API |
-| Interaction | Zoom, pan, neighbour highlight | Filters, search, shortest-path |
+| Interaction | Zoom, pan, character search, neighbour highlight | Filters, shortest-path |
 | Collectibles | — | Off-chain simulated collection |
 
 **Explicit non-goals for v1:** trading cards, any card visual design, character
@@ -32,6 +32,10 @@ Reserved: `PORTRAYED_BY`, `WIELDS`, `RELATED_TO`.
 
 Node colour encodes type; node radius encodes degree centrality; edge style
 encodes relation.
+
+Character search matches labels and aliases, highlights the first match and
+offers matching character results for direct selection. `Escape` clears the
+query and selection.
 
 ## Tooltip contents (v1)
 
